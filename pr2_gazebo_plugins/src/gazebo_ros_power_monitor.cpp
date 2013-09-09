@@ -27,13 +27,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "physics/World.hh"
-#include "sensors/Sensor.hh"
-#include "sdf/interface/SDF.hh"
-#include "sdf/interface/Param.hh"
-#include "common/Exception.hh"
-#include "physics/PhysicsTypes.hh"
-#include "physics/Base.hh"
+#include "gazebo/physics/World.hh"
+#include "gazebo/sensors/Sensor.hh"
+#include "sdf/sdf.hh"
+#include "gazebo/common/Exception.hh"
+#include "gazebo/physics/PhysicsTypes.hh"
+#include "gazebo/physics/Base.hh"
 
 #include <pr2_gazebo_plugins/gazebo_ros_power_monitor.h>
 #include <diagnostic_updater/diagnostic_updater.h>

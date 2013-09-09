@@ -33,15 +33,14 @@
 
 #include <pr2_gazebo_plugins/gazebo_ros_prosilica.h>
 
-#include "physics/World.hh"
-#include "physics/HingeJoint.hh"
-#include "sensors/Sensor.hh"
-#include "sdf/interface/SDF.hh"
-#include "sdf/interface/Param.hh"
-#include "common/Exception.hh"
-#include "sensors/CameraSensor.hh"
-#include "sensors/SensorTypes.hh"
-#include "rendering/Camera.hh"
+#include "gazebo/physics/World.hh"
+#include "gazebo/physics/HingeJoint.hh"
+#include "gazebo/sensors/Sensor.hh"
+#include "sdf/sdf.hh"
+#include "gazebo/common/Exception.hh"
+#include "gazebo/sensors/CameraSensor.hh"
+#include "gazebo/sensors/SensorTypes.hh"
+#include "gazebo/rendering/Camera.hh"
 
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/CameraInfo.h>
