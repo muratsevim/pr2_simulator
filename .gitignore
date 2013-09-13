@@ -1,3 +1,7 @@
+build
+bin
+lib
+*_gen
 pr2_gazebo_plugins/msg/cpp
 pr2_gazebo_plugins/msg/java
 pr2_gazebo_plugins/msg/lisp

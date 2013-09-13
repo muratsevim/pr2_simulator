@@ -160,7 +160,7 @@ void GazeboRosProsilica::OnNewImageFrame(const unsigned char *_image,
 
   }
   /// publish CameraInfo
-  if (this->info_connect_count_ > 0)
+  if (this->camera_info_pub_.getNumSubscribers() > 0)
   {
     common::Time cur_time = this->world_->GetSimTime();
     if (cur_time - this->last_info_update_time_ >= this->update_period_)

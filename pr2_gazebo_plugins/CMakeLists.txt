@@ -8,6 +8,9 @@ rosbuild_gensrv()
 
 add_definitions(-fPIC)
 
+find_package(GAZEBO REQUIRED)
+include_directories(${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
 
 # 
 # if screw joint exists, remove hack for damping variable
@@ -35,13 +38,15 @@ endif (${simulator_gazebo_version} VERSION_GREATER "1.2.8")
 
 rosbuild_add_boost_directories()
 
-rosbuild_add_library(gazebo_ros_controller_manager src/gazebo_ros_controller_manager.cpp)
+rosbuild_add_library_module(gazebo_ros_controller_manager src/gazebo_ros_controller_manager.cpp)
 rosbuild_link_boost(gazebo_ros_controller_manager thread)
-rosbuild_add_library(gazebo_ros_power_monitor src/gazebo_ros_power_monitor.cpp)
+target_link_libraries(gazebo_ros_controller_manager ${GAZEBO_LIBRARIES})
+rosbuild_add_library_module(gazebo_ros_power_monitor src/gazebo_ros_power_monitor.cpp)
 rosbuild_link_boost(gazebo_ros_power_monitor thread)
-rosbuild_add_library(gazebo_ros_prosilica src/gazebo_ros_prosilica.cpp)
+target_link_libraries(gazebo_ros_power_monitor ${GAZEBO_LIBRARIES})
+rosbuild_add_library_module(gazebo_ros_prosilica src/gazebo_ros_prosilica.cpp)
 rosbuild_link_boost(gazebo_ros_prosilica thread)
-target_link_libraries(gazebo_ros_prosilica gazebo_ros_camera_utils DepthCameraPlugin)
+target_link_libraries(gazebo_ros_prosilica gazebo_ros_camera_utils DepthCameraPlugin ${GAZEBO_LIBRARIES})
 
 exec_program("glxinfo" OUTPUT_VARIABLE glx_out RETURN_VALUE glx_val)
 if(${glx_val} EQUAL 0)

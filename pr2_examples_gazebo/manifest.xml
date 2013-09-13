@@ -6,7 +6,7 @@
   <url>http://ros.org/wiki/pr2_examples_gazebo</url>
   <depend package="pr2_gazebo_plugins"/>
   <depend package="gazebo_plugins"/>
-  <depend package="gazebo_tools"/>
+  <depend package="gazebo_ros"/>
   <depend package="pr2_mechanism_model"/>
   <platform os="ubuntu" version="9.04"/>
   <platform os="ubuntu" version="9.10"/>

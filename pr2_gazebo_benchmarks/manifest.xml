@@ -6,12 +6,11 @@
   <url>http://pr.willowgarage.com/wiki/</url>
   <depend package="pr2_gazebo_plugins"/>
   <depend package="gazebo_plugins"/>
-  <depend package="gazebo_worlds"/>
+  <depend package="gazebo_ros"/>
   <depend package="pr2_controller_configuration_gazebo"/>
   <depend package="robot_mechanism_controllers"/>
   <depend package="pr2_mechanism_controllers"/>
   <depend package="pr2_gazebo"/>
-  <depend package="gazebo"/>
   <!--depend package="parallel_quickstep"/-->
 
   <!-- we have a controller -->
@@ -27,6 +26,7 @@
     <gazebo plugin_path="${prefix}/lib" />
   </export>
   <rosdep name="libtool"/>
+  <rosdep name="gazebo"/>
   
   <platform os="ubuntu" version="9.04"/>
   <platform os="ubuntu" version="9.10"/>
