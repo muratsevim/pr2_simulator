@@ -9,6 +9,7 @@ rosbuild_gensrv()
 add_definitions(-fPIC)
 
 find_package(GAZEBO REQUIRED)
+find_package(OpenCV REQUIRED)
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
@@ -45,6 +46,7 @@ rosbuild_add_library_module(gazebo_ros_power_monitor src/gazebo_ros_power_monito
 rosbuild_link_boost(gazebo_ros_power_monitor thread)
 target_link_libraries(gazebo_ros_power_monitor ${GAZEBO_LIBRARIES})
 rosbuild_add_library_module(gazebo_ros_prosilica src/gazebo_ros_prosilica.cpp)
+target_link_libraries(gazebo_ros_prosilica ${OpenCV_LIBRARIES})
 rosbuild_link_boost(gazebo_ros_prosilica thread)
 target_link_libraries(gazebo_ros_prosilica gazebo_ros_camera_utils DepthCameraPlugin ${GAZEBO_LIBRARIES})
 
